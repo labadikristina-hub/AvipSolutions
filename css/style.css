@@ -296,7 +296,7 @@ body {
   color: var(--tekst-izbledeli);
   font-size: 1.1rem;
   max-width: 600px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .hero-akcije {
@@ -549,7 +549,7 @@ body {
 .hero-opis {
   color: var(--tekst-izbledeli);
   max-width: 750px;
-  margin: 0 auto;
+  margin: 40px;
   font-size: 1.1rem;
   line-height: 1.8;
 }
