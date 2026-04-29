@@ -1,0 +1,708 @@
+/* boje i fontovi */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Sora:wght@400;600;700;800&display=swap');
+
+:root {
+  --pozadina-tamna: #0a0c12;
+  --pozadina-kartice: rgba(255, 255, 255, 0.05);
+  --akcenat-plava: #3b82f6;
+  --tekst-glavni: #f8fafc;
+  --tekst-izbledeli: #94a3b8;
+  --staklo-ivica: rgba(255, 255, 255, 0.1);
+  --tranzicija: all 0.3s ease;
+  --logo-plava: #1b3a6a;
+  --akcenat-zuta: #ffcb1f;
+}
+
+/* resetovanje */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--pozadina-tamna);
+  color: var(--tekst-glavni);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* navbar */
+.navigacija {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(10, 12, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--staklo-ivica);
+}
+
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--logo-plava);
+  filter: brightness(1.5);
+}
+
+.logo span {
+  color: var(--akcenat-zuta);
+}
+
+.nav-linkovi {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-linkovi a {
+  text-decoration: none;
+  color: var(--tekst-izbledeli);
+  transition: var(--tranzicija);
+  font-weight: 500;
+}
+
+.nav-linkovi a:hover, .nav-linkovi a.aktivno {
+  color: var(--tekst-glavni);
+}
+
+.dugme-akcija {
+  background: var(--akcenat-plava);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--tranzicija);
+}
+
+.dugme-akcija:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* kartice : portfolio */
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-kartica {
+  background: var(--pozadina-kartice);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--staklo-ivica);
+  transition: var(--tranzicija);
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.kontejner-slike {
+  height: 250px;
+  background: #161b22;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kontejner-slike img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sadrzaj-kartice {
+  padding: 30px;
+}
+
+.kategorija {
+  color: var(--akcenat-plava);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sadrzaj-kartice h3 {
+  margin: 10px 0;
+  font-family: 'Sora', sans-serif;
+}
+
+.sadrzaj-kartice p {
+  color: var(--tekst-izbledeli);
+  font-size: 0.95rem;
+}
+
+/* efekat za kartice */
+.portfolio-kartica:hover {
+  transform: translateY(-10px);
+  border-color: var(--akcenat-plava);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-kartica:hover .kontejner-slike img {
+  transform: scale(1.1);
+}
+
+/* prednosti i animacija */
+.panel-prednost {
+  background: rgba(255, 255, 255, 0.015);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.4s ease;
+}
+
+.plavi-hover { border-left: 4px solid var(--akcenat-plava); }
+.plavi-hover:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: -8px 0 25px rgba(59, 130, 246, 0.15);
+  background: rgba(255, 255, 255, 0.025);
+  transform: translateY(-3px);
+}
+
+.zuti-hover { border-left: 4px solid var(--akcenat-zuta); }
+.zuti-hover:hover {
+  border-color: rgba(255, 203, 31, 0.4);
+  box-shadow: -8px 0 25px rgba(255, 203, 31, 0.15);
+  background: rgba(255, 255, 255, 0.025);
+  transform: translateY(-3px);
+}
+
+/* sjaj u pozadini*/
+.glow-top-left {
+  position: absolute; top: 10%; left: 0; width: 400px; height: 400px;
+  background: rgba(59, 130, 246, 0.12); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;
+}
+
+.glow-bottom-right {
+  position: absolute; bottom: 0; right: 0; width: 300px; height: 300px;
+  background: rgba(255, 203, 31, 0.06); filter: blur(90px); border-radius: 50%; pointer-events: none; z-index: 0;
+}
+
+/* podnozje-footer */
+.glavni-footer {
+  background: #040508;
+  padding: 80px 8% 40px;
+  border-top: 1px solid var(--staklo-ivica);
+  margin-top: 100px;
+}
+
+.footer-mreza {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-kolona h4 {
+  color: var(--tekst-glavni);
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.opis-firme {
+  color: var(--tekst-izbledeli);
+  margin-top: 20px;
+  max-width: 300px;
+  font-size: 0.95rem;
+}
+
+.footer-linkovi { list-style: none; }
+.footer-linkovi li { margin-bottom: 12px; }
+.footer-linkovi a {
+  text-decoration: none;
+  color: var(--tekst-izbledeli);
+  transition: var(--tranzicija);
+}
+
+.footer-linkovi a:hover {
+  color: var(--akcenat-plava);
+  padding-left: 5px;
+}
+
+.autorska-prava {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid var(--staklo-ivica);
+  text-align: center;
+  color: var(--tekst-izbledeli);
+  font-size: 0.85rem;
+}
+
+/* responzivnost ka dalje*/
+@media (max-width: 768px) {
+  .nav-linkovi { display: none; }
+  .footer-mreza { grid-template-columns: 1fr; gap: 30px; }
+  .footer-kolona { text-align: center; }
+}
+/* stilovi */
+.hero-sekcija {
+  padding: 150px 8% 100px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+}
+
+.nadnaslov {
+  color: var(--akcenat-plava);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.hero-sekcija h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin: 20px 0;
+  max-width: 800px;
+}
+
+.plavi-tekst {
+  color: var(--akcenat-plava);
+}
+
+.hero-opis {
+  color: var(--tekst-izbledeli);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero-akcije {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.link-sekundarni {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--tranzicija);
+}
+
+.strelica {
+  color: var(--akcenat-plava);
+  margin-left: 5px;
+}
+
+/* logo i nav */
+.nav-logo-img {
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.dugme-akcija {
+  display: inline-block;
+}
+
+/* detalji futera */
+.logo-footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  height: 45px;
+  width: auto;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.kontakt-adresa {
+  color: var(--tekst-izbledeli);
+}
+
+.kontakt-email {
+  color: var(--akcenat-zuta);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* osnovni kontejner - sekcije */
+.kontakt-heroj {
+  padding: 160px 8% 100px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+}
+
+/* leva strana i forma  */
+.kontakt-mreza {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 80px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  align-items: stretch;
+}
+
+/* kolona sa leve strane, tekst i kartice */
+.kontakt-tekst {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.kontakt-tekst h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  margin: 20px 0 30px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* razmak da gurne dole za ravnanje */
+.razmak-do-kartica {
+  flex: 1 1 auto;
+}
+
+/* kontakt kartice  */
+.kontakt-kartice-grupa {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.kontakt-kartica {
+  background: var(--pozadina-kartice);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid var(--staklo-ivica);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.ikona-okvir {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* nasa kancelarija varijabla plava */
+.plava-kartica h3 {
+  color: var(--akcenat-plava);
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+/* direktan kontakt varijabla zuta */
+.zuta-kartica h3 {
+  color: var(--akcenat-zuta);
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+/* stilovi za kartice */
+.plava-kartica .ikona-okvir { background: rgba(59, 130, 246, 0.1); color: var(--akcenat-plava); }
+.zuta-kartica .ikona-okvir { background: rgba(255, 203, 31, 0.1); color: var(--akcenat-zuta); }
+
+.plava-kartica:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: var(--akcenat-plava);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.zuta-kartica:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: var(--akcenat-zuta);
+  box-shadow: 0 10px 25px rgba(255, 203, 31, 0.15);
+  background: rgba(255, 203, 31, 0.08);
+}
+
+/* efekat za kontakt */
+.kontakt-forma {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 50px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.01);
+}
+
+.forma-red {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.polje label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--tekst-izbledeli);
+  font-weight: 500;
+}
+
+.polje input, .polje textarea, .selekt-projekta {
+  width: 100%;
+  padding: 16px;
+  background: rgba(10, 12, 18, 0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+/* efekti za polja */
+.polje input:focus, .polje textarea:focus {
+  border-color: var(--akcenat-plava);
+  background: rgba(59, 130, 246, 0.03);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+/* plavo dugme u formi */
+.forma-dugme {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 14px;
+  font-weight: 700;
+  background: var(--akcenat-plava);
+  color: white;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.forma-dugme:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5);
+}
+
+/* custom select strelica */
+.selekt-projekta {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+/* hero i header */
+.usluge-header {
+  padding: 180px 8% 80px;
+  text-align: center;
+  position: relative;
+}
+
+.header-centar {
+  position: relative;
+  z-index: 1;
+}
+
+.header-centar h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-opis {
+  color: var(--tekst-izbledeli);
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* kartice-mreza */
+.sekcija-kartice {
+  padding: 60px 8% 100px;
+}
+
+.usluge-mreza {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-kartica.sadrzaj-kartice h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* sekcija prednosti */
+.sekcija-prednosti {
+  padding: 100px 8%;
+  background: #080a10;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.prednosti-naslov {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.prednosti-mreza {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.panel-prednost p {
+  color: var(--tekst-izbledeli);
+}
+
+/* citat-testimonial */
+.sekcija-citat {
+  padding: 120px 8%;
+  text-align: center;
+  position: relative;
+}
+
+.glow-centar-fiksiran {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.15);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.citat-box {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.citat-glavni {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.potpis-klijenta {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--akcenat-plava);
+}
+
+.sekcija-faq {
+  padding: 100px 8%;
+  background: #080a10;
+}
+
+.faq-naslov {
+  font-family: 'Sora', sans-serif;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.faq-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.faq-stavka {
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--staklo-ivica);
+  padding: 25px;
+}
+
+.faq-stavka h4 {
+  margin-bottom: 12px;
+  font-family: 'Sora', sans-serif;
+}
+
+.faq-stavka p {
+  color: var(--tekst-izbledeli);
+}
+
+.bez-borda {
+  border-bottom: none;
+}
+
+/* konacno CTA */
+.sekcija-cta {
+  padding: 120px 8%;
+  text-align: center;
+  position: relative;
+}
+
+.cta-sadrzaj {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-naslov {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+}
+
+.cta-opis {
+  color: var(--tekst-izbledeli);
+  margin-bottom: 50px;
+  font-size: 1.15rem;
+}
+
+.cta-dugme {
+  padding: 20px 60px !important;
+  font-size: 1.2rem !important;
+}
+
+/* Footer Specifičnosti */
+.logo-footer {
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+.footer-logo-img {
+  height: 45px;
+}
+
+.kontakt-adresa {
+  color: var(--tekst-izbledeli);
+  margin-bottom: 12px;
+}
+
+.kontakt-email {
+  color: var(--akcenat-zuta);
+  font-weight: 600;
+}
