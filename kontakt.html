@@ -59,33 +59,36 @@
     </div>
 
     <div class="kontakt-forma">
-      <form>
+      <form action="https://formspree.io/f/IDkojibude" method="POST">
+
         <div class="forma-red">
           <div class="polje">
             <label>Vaše Ime</label>
-            <input type="text" placeholder="Ime i prezime">
+            <input type="text" name="ime" placeholder="Ime i prezime" required minlength="2">
           </div>
           <div class="polje">
             <label>Email adresa</label>
-            <input type="email" placeholder="me@email.com">
+            <input type="email" name="email" placeholder="me@email.com" required>
           </div>
         </div>
 
         <div class="polje" style="margin-bottom: 25px;">
           <label>Vrsta projekta</label>
-          <select class="selekt-projekta">
-            <option>Razvoj Softvera</option>
-            <option>Web Dizajn & SEO</option>
-            <option>Brending & Marketing</option>
-            <option>Konsultacije</option>
-            <option>Ostalo</option>
+          <select name="kategorija" class="selekt-projekta">
+            <option value="Razvoj Softvera">Razvoj Softvera</option>
+            <option value="Web Dizajn & SEO">Web Dizajn & SEO</option>
+            <option value="Brending & Marketing">Brending & Marketing</option>
+            <option value="Konsultacije">Konsultacije</option>
+            <option value="Ostalo">Ostalo</option>
           </select>
         </div>
 
         <div class="polje" style="margin-bottom: 35px;">
           <label>Vaša poruka</label>
-          <textarea placeholder="Opišite nam vašu viziju..." rows="5"></textarea>
+          <textarea name="poruka" placeholder="Opišite nam vašu viziju..." rows="5" required minlength="10"></textarea>
         </div>
+
+        <input type="text" name="_gotcha" style="display:none">
 
         <button type="submit" class="forma-dugme">Pošalji upit</button>
       </form>
