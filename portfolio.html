@@ -8,20 +8,7 @@
 </head>
 <body>
 
-<nav class="navigacija">
-  <a href="index.html" class="logo" style="display: flex; align-items: center;">
-    <img src="img/avip-logo.png"
-         alt="AVIP Solutions Logo"
-         style="height: 50px; width: auto; filter: brightness(1.2) contrast(1.1);">
-  </a>
-
-  <ul class="nav-linkovi">
-    <li><a href="index.html" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--tekst-izbledeli)'" style="transition: 0.3s; color: var(--tekst-izbledeli);">Početna</a></li>
-    <li><a href="usluge.html" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--tekst-izbledeli)'" style="transition: 0.3s; color: var(--tekst-izbledeli);">Usluge</a></li>
-    <li><a href="portfolio.html" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--tekst-izbledeli)'" style="transition: 0.3s; color: var(--tekst-izbledeli);">Portfolio</a></li>
-    <li><a href="kontakt.html" class="dugme-akcija" style="background: var(--akcenat-plava); display: inline-block;">Započni Projekat</a></li>
-  </ul>
-</nav>
+<div id="nav-placeholder"></div>
 
 <section style="padding: 180px 8% 100px;">
   <div style="text-align: center; margin-bottom: 60px;">
@@ -32,6 +19,11 @@
   <div id="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
   </div>
 </section>
+
+
+<div id="footer-placeholder"></div>
+
+<script src="js/skriptaZaNaviFoot.js"></script>
 
 <!-- kad bude radilo koristice se :
 <script src="js/vendor/data.js"></script>

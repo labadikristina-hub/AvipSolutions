@@ -549,7 +549,7 @@ body {
 .hero-opis {
   color: var(--tekst-izbledeli);
   max-width: 750px;
-  margin: 40px;
+  margin: 40px auto;
   font-size: 1.1rem;
   line-height: 1.8;
 }
